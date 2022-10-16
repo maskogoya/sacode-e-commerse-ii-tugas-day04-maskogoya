@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Day04</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="pagination">
+            <button class="btn1" onclick="backBtn()"><img src="gambar/448-arrow.png"> prev</button>
+                <ul>
+                    <li class="link active" value="1" onclick="activeLink()">1</li>
+                    <li class="link" value="2" onclick="activeLink()">2</li>
+                    <li class="link" value="3" onclick="activeLink()">3</li>
+                    <li class="link" value="4" onclick="activeLink()">4</li>
+                    <li class="link" value="5" onclick="activeLink()">5</li>
+                    <li class="link" value="6" onclick="activeLink()">6</li>
+                    <li class="link" value="7" onclick="activeLink()">7</li>
+                </ul>
+            <button class="btn2" onclick="nextBtn()">next <img src="gambar/448-arrow.png"></button>
+        </div>
+    </div>
+    
+
+<script>
+    let link = Document.getElementsByClassName("link");
+    
+    let currentValue = 1;
+
+    function activeLink(){
+        for(l of link ){
+            l.classList.remove("active");
+        }
+        event.target.classList.add("active");
+        currentValue = event.target.value;
+    }
+
+
+    function backBtn(){
+        if(currentValue > 1){
+            for(l of link){
+                l.classList.remove("active");
+            }
+            currentValue--;
+            link{currentValue-1}.classList.add("active");
+        }
+    }
+
+
+    function nextBtn(){
+        if(currentValue < 7){
+            for(l of link){
+                l.classList.remove("active");
+            }
+            currentValue++;
+            link{currentValue-1}.classList.add("active");
+        }
+    }
+</script>
+
+</body>
+</html>
